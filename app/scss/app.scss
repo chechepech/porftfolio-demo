@@ -1,0 +1,266 @@
+/* variables*/
+
+$head-color:#17191A;
+$color-blue:#027bff;
+$weight-font:400;
+
+/*----------- MIXINs -------------*/
+@mixin shadow{
+	-moz-box-shadow: 0px 3px 70px 0px rgba(23,30,36,0.06);	
+	-webkit-box-shadow: 0px 3px 70px 0px rgba(23,30,36,0.6);
+	box-shadow: 0px 3px 70px 0px rgba(23,30,36,0.6);
+}
+
+@mixin easeout{
+	transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+}
+/*---------------------------------*/
+/*------------ GLOBAL ----------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+html{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 400;
+	color: #191919;
+}
+
+body{
+	width:60%;
+	margin:auto;
+	background-image: url(../img/BG.png);
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.blue{
+	color:$color-blue;
+}
+
+h1{
+	font-size:40px;
+	font-weight: $weight-font;
+	color: $head-color;
+}
+h2{
+	font-size:35px;
+	font-weight: $weight-font;
+	color: $head-color;
+}
+h5{
+	font-size:20px;
+	margin-top: 10px;
+	color: $head-color;
+}
+
+p{
+	color:#8f9ea5;
+	opacity: 0.8;
+	font-weight: 100;
+	margin-top: 10px;
+	font-size: 20px;
+}
+img.img-size{
+	width: 300px;	
+	&:hover {
+     width:302px;
+     @include easeout;
+  }
+}
+/*--------- nav ----------*/
+.nav{
+	display: flex;
+	align-items: center;
+	height: 100px;	
+}
+
+.contact-me, .nav-icons{
+	flex: 1;
+}
+
+.nav-icons{
+	text-align: right;	
+}
+
+.nav-icons a, .contact-me a, .contact-me img{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.nav-icons a{
+	margin-left: 40px;
+}
+
+.contact-me a{
+	color:$color-blue;
+	text-decoration: none;
+}
+
+.contact-me img{
+	margin-right: 10px;
+}
+
+/*---------- Landing ----------*/
+
+.landing{
+	height: 100vh;
+	position: relative;
+}
+.landing-wrapper{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+ul{
+list-style: none;
+margin-top: 30px;
+line-height: 30px;
+}
+
+.landing-l{
+	margin-top: 4em;
+}
+
+.scroll{
+	position: absolute;
+	bottom: 180px;
+	left:0;
+	right: 0;
+	margin: auto;
+}
+
+//---------->skills
+.skills{
+	text-align: center;
+	margin-bottom: 20em;
+}
+.skills p{
+	margin-bottom: 30px;
+}
+.skills img{
+	width:40px;
+	margin:0 15px;
+}
+//---------->Works
+.work{
+	width:100%;
+	position: relative;
+	margin-bottom: 20em;
+}
+
+.work>.work-text{
+	position:absolute;
+	top:85px;
+}
+
+.work>.work-text>.underline{
+	display: block;
+	background-color: $color-blue;
+	height: 3px;
+	width: 61px;
+	margin-top: 5px;
+}
+
+.work > .work-img{
+	width:85%;
+	float:right;
+	@include shadow;	
+}
+
+.work ul{
+	position: absolute;
+	bottom: 0;
+	right: 86%;
+}
+
+.work ul li{
+	margin-top: 20px;
+}
+
+/* ------------- work 2 --------*/
+.work-2{
+	width:100%;
+	position:relative;	
+	margin-bottom: 20em;
+}
+
+.work-2>.work-text{
+	position: absolute;
+	top:85px;
+	right:0;
+	text-align:right;
+}
+
+.work-2>.work-text>.underline{
+	display: block;
+	background-color:$color-blue;
+	height: 3px;
+	width: 61px;
+	margin-top: 5px;
+	float: right;
+}
+
+.work-2>.work-img{
+	width:85%;
+	float: left;
+	@include shadow;
+}
+.work-2 ul{
+	position: absolute;
+	bottom: 0;
+	left:86%;
+}
+
+.work-2 ul li{
+	margin-top: 20px;
+}
+
+/*-------- Work 1 and work 2 --------*/
+
+.work a, .work-2 a{
+	text-decoration: none;
+	color:#17191A;
+}
+
+/*---------footer---------*/
+.footer{
+	background-image: url(../img/Dribbble_Blue_Large.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: 320px;
+	padding-bottom: 7em;
+	text-align: center;
+}
+
+.footer a{
+	color:$color-blue;
+	text-decoration: none;
+}
+
+.underline-small{
+	display: block;
+	height: 3px;
+	width:41px;
+	margin:5px auto 0 auto;
+	background-color:$color-blue;
+}
